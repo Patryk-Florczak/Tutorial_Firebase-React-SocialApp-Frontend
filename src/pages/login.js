@@ -13,34 +13,9 @@ import {
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const styles = {
-  form: {
-    textAlign: 'center',
-  },
-  image: {
-    margin: '20px auto',
-    width: '80px',
-    height: '80px',
-  },
-  pageTitle: {
-    margin: '10px auto',
-  },
-  textField: {
-    margin: '10px auto',
-  },
-  button: {
-    marginTop: 20,
-    position: 'relative',
-  },
-  customError: {
-    color: 'red',
-    fontSize: '0.8rem',
-    marginTop: 10,
-  },
-  progress: {
-    position: 'absolute',
-  },
-};
+const styles = (theme) => ({
+  ...theme.globalStyles,
+});
 
 class login extends Component {
   constructor() {
@@ -64,6 +39,7 @@ class login extends Component {
     Axios.post('/login', userData)
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
         this.setState({
           loading: false,
         });
