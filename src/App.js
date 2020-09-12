@@ -25,6 +25,19 @@ const theme = createMuiTheme({
       contrastText: '#fff',
     },
   },
+  typography: {
+    fontFamily: [
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
+    ],
+  },
 });
 
 export class App extends Component {
