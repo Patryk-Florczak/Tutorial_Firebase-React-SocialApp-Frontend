@@ -5,6 +5,7 @@ import {
   CLEAR_ERRORS,
   LOADING_UI,
   SET_UNAUTHENTICATED,
+  LOADING_USER,
 } from '../types';
 
 export const loginUser = (userData, history) => (dispatch) => {
@@ -48,6 +49,7 @@ export const logoutUser = () => (dispatch) => {
 };
 
 export const getUserData = () => (dispatch) => {
+  dispatch({ type: LOADING_USER });
   Axios.get('/user')
     .then((res) => {
       dispatch({
