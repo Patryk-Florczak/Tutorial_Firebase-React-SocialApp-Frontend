@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Tooltip,
   withStyles,
   Button,
   TextField,
@@ -9,13 +8,13 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  IconButton,
 } from '@material-ui/core';
 
 import { Edit as EditIcon } from '@material-ui/icons';
 
 import { connect } from 'react-redux';
 import { editUserDetails } from '../redux/actions/userActions';
+import MyButton from '../util/MyButton';
 
 const styles = (theme) => ({
   ...theme.globalStyles,
@@ -67,11 +66,13 @@ class EditDetails extends Component {
     const { classes } = this.props;
     return (
       <Fragment>
-        <Tooltip title="Edit details" placement="top">
-          <IconButton onClick={this.handleOpen} className={classes.button}>
-            <EditIcon color="primary" />
-          </IconButton>
-        </Tooltip>
+        <MyButton
+          tip="Edit Details"
+          onClick={this.handleOpen}
+          btnClassName={classes.button}
+        >
+          <EditIcon color="primary" />
+        </MyButton>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
