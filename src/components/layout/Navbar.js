@@ -2,15 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import MyButton from '../util/MyButton';
-import PostScream from './PostScream';
+import MyButton from '../../util/MyButton';
+import PostScream from '../scream/PostScream';
 
 import { AppBar, Toolbar, Button } from '@material-ui/core';
-import {
-  Add as AddIcon,
-  Home as HomeIcon,
-  Notifications,
-} from '@material-ui/icons';
+import { Home as HomeIcon, Notifications } from '@material-ui/icons';
 
 export class Navbar extends Component {
   render() {

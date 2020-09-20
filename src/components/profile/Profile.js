@@ -16,8 +16,8 @@ import {
 } from '@material-ui/icons';
 
 import { connect } from 'react-redux';
-import { logoutUser, uploadImage } from '../redux/actions/userActions';
-import MyButton from '../util/MyButton';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
+import MyButton from '../../util/MyButton';
 
 const styles = (theme) => ({
   paper: {

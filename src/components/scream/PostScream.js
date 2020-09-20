@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 
 import {
   withStyles,
@@ -12,14 +12,10 @@ import {
   DialogTitle,
 } from '@material-ui/core';
 
-import {
-  Edit as EditIcon,
-  Add as AddIcon,
-  Close as CloseIcon,
-} from '@material-ui/icons';
+import { Add as AddIcon, Close as CloseIcon } from '@material-ui/icons';
 
 import { connect } from 'react-redux';
-import { postScream, clearErrors } from '../redux/actions/dataActions';
+import { postScream, clearErrors } from '../../redux/actions/dataActions';
 
 const styles = (theme) => ({
   ...theme.globalStyles,
