@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import MyButton from '../../util/MyButton';
 import PostScream from '../scream/PostScream';
+import Notifications from './Notifications';
 
 import { AppBar, Toolbar, Button } from '@material-ui/core';
-import { Home as HomeIcon, Notifications } from '@material-ui/icons';
+import { Home as HomeIcon } from '@material-ui/icons';
 
 export class Navbar extends Component {
   render() {
@@ -17,12 +18,12 @@ export class Navbar extends Component {
           {authenticated ? (
             <Fragment>
               <PostScream />
-              <MyButton tip="Home">
-                <HomeIcon />
-              </MyButton>
-              <MyButton tip="Notifications">
-                <Notifications />
-              </MyButton>
+              <Link to="/">
+                <MyButton tip="Home">
+                  <HomeIcon />
+                </MyButton>
+              </Link>
+              <Notifications />
             </Fragment>
           ) : (
             <Fragment>
