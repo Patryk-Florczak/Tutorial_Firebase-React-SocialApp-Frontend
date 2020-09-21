@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 import { withStyles, Button, Paper, Typography } from '@material-ui/core';
 import MuiLink from '@material-ui/core/Link';
@@ -20,51 +21,7 @@ import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 import MyButton from '../../util/MyButton';
 
 const styles = (theme) => ({
-  paper: {
-    padding: 20,
-  },
-  profile: {
-    '& .image-wrapper': {
-      textAlign: 'center',
-      position: 'relative',
-      '& button': {
-        position: 'absolute',
-        top: '80%',
-        left: '70%',
-      },
-    },
-    '& .profile-image': {
-      width: 200,
-      height: 200,
-      objectFit: 'cover',
-      maxWidth: '100%',
-      borderRadius: '50%',
-    },
-    '& .profile-details': {
-      textAlign: 'center',
-      '& span, svg': {
-        verticalAlign: 'middle',
-      },
-      '& a': {
-        color: theme.palette.primary.main,
-      },
-    },
-    '& hr': {
-      border: 'none',
-      margin: '0 0 10px 0',
-    },
-    '& svg.button': {
-      '&:hover': {
-        cursor: 'pointer',
-      },
-    },
-  },
-  buttons: {
-    textAlign: 'center',
-    '& a': {
-      margin: '20px 10px',
-    },
-  },
+  ...theme.globalStyles,
 });
 
 class Profile extends Component {
@@ -175,7 +132,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>loading...</p>
+      <ProfileSkeleton />
     );
 
     return profileMarkup;
