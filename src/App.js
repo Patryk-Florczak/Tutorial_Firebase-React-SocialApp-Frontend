@@ -21,6 +21,8 @@ import user from './pages/user';
 import Axios from 'axios';
 
 const theme = createMuiTheme(themeFile);
+Axios.defaults.baseURL =
+  'https://europe-west1-socialapp-51b1b.cloudfunctions.net/api';
 
 const token = localStorage.FBIdToken;
 if (token) {
@@ -35,7 +37,7 @@ if (token) {
   }
 }
 
-export class App extends Component {
+class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>

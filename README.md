@@ -4,12 +4,20 @@
 
 ## Live Demo
 
-In progress...
+To see the app in action, go [here](https://socialapp-51b1b.web.app/).
 
 ## Features
 
-- ...
+- Signup and login system
+- User profiling
+- Custom posting system named "screams"
+- Commenting and liking
+- Notifications on action
 
 ## Built with / What I learned
 
 - [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [MaterialUI](https://material-ui.com/)
+- [dayjs](https://github.com/iamkun/dayjs)
+- [axios](https://github.com/axios/axios)

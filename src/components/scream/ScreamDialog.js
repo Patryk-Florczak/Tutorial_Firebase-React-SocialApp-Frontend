@@ -77,9 +77,10 @@ class ScreamDialog extends Component {
   };
   handleClose = () => {
     window.history.pushState(null, null, this.state.oldPath);
-    this.setState({ open: false, errors: {} });
+    this.setState({ open: false });
     this.props.clearErrors();
   };
+
   render() {
     const {
       classes,
@@ -116,7 +117,7 @@ class ScreamDialog extends Component {
           </Typography>
           <hr className={classes.invisibleSeparator} />
           <Typography variant="body2" color="textSecondary">
-            {dayjs(createdAt).format('h:mm a, MMM DD YYYY')}
+            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
           <hr className={classes.invisibleSeparator} />
           <Typography variant="body1">{body}</Typography>
@@ -139,7 +140,7 @@ class ScreamDialog extends Component {
           tip="Expand scream"
           tipClassName={classes.expandButton}
         >
-          <UnfoldMore color="primary"></UnfoldMore>
+          <UnfoldMore color="primary" />
         </MyButton>
         <Dialog
           open={this.state.open}
@@ -154,7 +155,7 @@ class ScreamDialog extends Component {
           >
             <CloseIcon />
           </MyButton>
-          <DialogContent className={classes.DialogContent}>
+          <DialogContent className={classes.dialogContent}>
             {dialogMarkup}
           </DialogContent>
         </Dialog>
